@@ -44,3 +44,18 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
     - Serving in modern format, such as WebP and AVIF, when browser supports it.
   - Set the `width` and `height` to avoid layout shift.
 - How fonts and images are optimized.
+
+## Chapter 4 Creating Layouts and Pages
+
+- Create **routes** with **layouts** and **pages**.
+- File-system routing - folders, files.
+  - Each folder represents route segment.
+  - Create UIs for each route using `layout.tsx` and `page.tsx` (required for the route).
+- Use `layout.tsx` to create UI that is shared between multiple pages, such as navigation.
+  - `children` prop can either be a page or another layout.
+  - Partial rendering - Page components update won't re-render layout.
+  - Root layout - `app/layout.tsx`
+    - Like an entry point.
+    - It is required.
+    - UI components in this layout are shared across all pages.
+    - Use to modify `<html>`, `<body>` and add metadata.
