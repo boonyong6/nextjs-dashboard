@@ -59,3 +59,21 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
     - It is required.
     - UI components in this layout are shared across all pages.
     - Use to modify `<html>`, `<body>` and add metadata.
+
+## Chapter 5 Navigating Between Pages
+
+- Use `nex/link` component (`<Link>`) to create links (optimize).
+  - `<a>` triggers full page refresh.
+  - `<Link>` performs client-side navigation (NO full page refresh).
+  - Usage of `<Link>` is similar to `<a>`.
+- Automatic code-splitting and prefetching
+  - Next.js automatically code splits your app by route segments, so they can be loaded separately.
+  - In traditional React SPA, the browser loads all your app code on initial load.
+  - Pages become isolated. An error thrown by a page wouldn't crash the entire app.
+  - In production, when `<Link>` components appear in the viewport, Next.js prefetches the code for the linked route in the background.
+- Pattern: Showing active links
+  - To indicate to the user what page they are currently on.
+  - By matching the user's current path from the URL.
+  - Use `usePathname()` hook to implement this pattern.
+  - Note: Hooks can only be used in client components. Set `"use client"` directive.
+- How navigation works.
