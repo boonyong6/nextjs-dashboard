@@ -77,3 +77,13 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   - Use `usePathname()` hook to implement this pattern.
   - Note: Hooks can only be used in client components. Set `"use client"` directive.
 - How navigation works.
+
+## Chapter 7 Fetching Data
+
+- Ways: API, ORM (Kysely, Prisma, Drizzle), SQL
+- In Next.js, you can create API endpoints using **Route Handlers**.
+- **Server components**
+  - Can access **back-end resources** more securely.
+  - Support **promises**. Can use `async`/`await`. So, no need to use `useEffect`, `useState` or data fetching libraries.
+  - No API layer needed.
+- Parallel data fetching using a JavaScript Pattern.
