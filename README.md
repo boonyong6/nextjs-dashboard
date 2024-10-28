@@ -87,3 +87,37 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   - Support **promises**. Can use `async`/`await`. So, no need to use `useEffect`, `useState` or data fetching libraries.
   - No API layer needed.
 - Parallel data fetching using a JavaScript Pattern.
+
+## Chapter 8 Static and Dynamic Rendering
+
+- Static rendering - Data fetching and rendering happens on the server at **build time**.
+  - Can be cached using CDNs
+  - Reduced server load
+  - Useful for UI with no data or shared/public data.
+- Dynamic rendering
+  - Content is rendered on the server at request time.
+  - Benefits:
+    - To display real-time/up-to-date data.
+    - User-specific or personalized content
+    - To obtain request time information (cookies, query string)
+- Slow data fetch block UI from showing.
+
+## Chapter 9 Steaming
+
+- Use in conjunction with Server Components.
+- Streaming is a data transfer technique to break down a route into smaller "chunks".
+- Prevent slow data requests from blocking your whole page.
+- Each Rect component can be considered a _chunk_.
+- Two ways to implement:
+  1. At the page level, with the `loading.tsx` file.
+     - Streaming a whole page.
+     - `loading.tsx` is a special file built on top of Suspense.
+     - Interrupt-able navigation - Can navigate away before finish loading.
+  2. For specific components, with `<Suspense>`.
+     - To defer rendering parts of your app until some condition is met.
+     - Wrap dynamic components in Suspense.
+     - Good practice: Move your data fetches down to the components that need it, and then wrap those components in Suspense.
+- Routes groups
+  - Organize files into logical groups without affecting the URL path structure.
+  - Folders with parentheses, such as `(overview)`. The name won't be included in the URL path.
+  - Can use it to separate your app into sections, such as `(marketing)` and `(shop)`.
