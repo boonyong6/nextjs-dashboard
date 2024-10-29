@@ -121,3 +121,19 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   - Organize files into logical groups without affecting the URL path structure.
   - Folders with parentheses, such as `(overview)`. The name won't be included in the URL path.
   - Can use it to separate your app into sections, such as `(marketing)` and `(shop)`.
+
+## Chapter 10 Partial Prerendering (Experimental)
+
+- To combine the benefits of static rendering, dynamic rendering, and streaming in the same route.
+- Calling dynamic functions in a route (e.g. query DB) make it dynamic.
+- But, most routes are not fully static or dynamic.
+  - Static - product info
+  - Dynamic - personalized content (user's cart, recommended products).
+- When a user visits a route:
+  1. Serve the static route shell (e.g. navbar, product info).
+  2. Shell leaves holes where dynamic content (e.g. cart, recommended products) will load in asynchronously using Suspense.
+     - Suspense fallback is embedded into the initial HTML file.
+     - Suspense is used as a boundary between your static and dynamic code.
+  3. Stream dynamic content in parallel.
+- Static content is **prerendered** at build time. Whereas, dynamic content is **postponed** until the user request time.
+- Don't need to change your code to use PPR as long as you're using Suspense.

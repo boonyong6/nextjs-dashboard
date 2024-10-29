@@ -1,5 +1,8 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
 
+// // Only works on the latest canary version.
+// export const experimental_ppr = true;
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
