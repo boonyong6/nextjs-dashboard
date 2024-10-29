@@ -157,3 +157,38 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 - For client component, use `useSearchParams()` hook.
 - For server component, use `searchParams` prop.
 - `use-debounce` - Library for implementing debounce.
+
+## Chapter 12 Mutating Data
+
+- Use React Server Actions to mutate data.
+  - Eliminate the need to create API endpoints.
+  - To run async code directly on the server.
+  - Deeply integrated with Next.js caching.
+  - Can also revalidate the associated cache using APIs like `revalidatePath` and `revalidateTag`.
+- Work with forms and Server Components.
+  - In server component, use `<form>` `action` attribute to invoke action (async function).
+  - In React, `action` attribute is a special prop (React builds on top of it)
+- Work with the native `formData` object, including type validation.
+  - extract the data from the `formData` object.
+- Revalidate client cache using `revalidatePath` API.
+- Dynamic route segments with specific IDs.
+- Steps to CREATE a new invoice.
+  1. Create a new route and form
+  2. Create a Server Action
+     - `"user server"` marks all the exported functions within the file as Server Actions.
+     - Create POST API endpoints behind the scenes.
+  3. Extract the data from `formData`.
+     - Use `.get(name)` or `.entries()` with `Object.fromEntries()`.
+  4. Validate and prepare the data
+     - Can use `Zod` library for type validation.
+  5. Inserting the data into your database
+  6. Revalidate and redirect
+     - Client-side Router Cache - Store/cache the route segments for a time.
+     - Add/update data that is used in other (`invoices`) routes require you to clear the cache using `revalidatePath` function.
+- Steps to UPDATE an invoice.
+  1. Create a Dynamic Route Segment with the invoice `id`.
+     - Create routes based on data.
+  2. Read the invoice `id` from page `params`.
+     - Page components accept a prop called `params`.
+  3. Fetch the specific invoice.
+  4. Pass the `id` to the Server Action.
