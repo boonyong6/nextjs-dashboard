@@ -36,12 +36,14 @@ function _formatSql(sqlStrings: TemplateStringsArray, ...values: any[]) {
   let sql = "";
   sqlStrings.forEach((s, i) => {
     let value = "";
-    if (values[i]) {
+    if (values[i] != undefined) {
       value = `'${values[i]}'`;
     }
 
     sql += s + value;
   });
+
+  // console.log(sql);
 
   return sql;
 }

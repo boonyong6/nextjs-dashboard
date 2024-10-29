@@ -137,3 +137,23 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   3. Stream dynamic content in parallel.
 - Static content is **prerendered** at build time. Whereas, dynamic content is **postponed** until the user request time.
 - Don't need to change your code to use PPR as long as you're using Suspense.
+
+## Chapter 11 Adding Search and Pagination
+
+- Search functionality span the client and the server.
+  - Client - Search query from URL params.
+  - Server - Data fetching, table re-render.
+- Next.js client hooks to use for implementing search:
+  - `useSearchParams` - Extract the query string to an object.
+  - `usePathName` - Extract the path name.
+  - `useRouter` - To navigate route programmatically. Has many methods to use.
+- Client component can use event listeners and hooks.
+- `URLSearchParams` - Standard Web API that provide utility methods for manipulating the URL query parameters.
+- Use `useRouter` and `usePathname` hooks to update the URL.
+- URL is updated without reloading the page (Next.js client-side navigation feature).
+- `defaultValue` vs `value` (HTML input element) / Uncontrolled vs Controlled
+  - Bind state to `value` make it a controlled component.
+  - Since the search query is saved to the URL instead of state (uncontrolled component), we then use `defaultValue` to set the initial value.
+- For client component, use `useSearchParams()` hook.
+- For server component, use `searchParams` prop.
+- `use-debounce` - Library for implementing debounce.
