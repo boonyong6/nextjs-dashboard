@@ -192,3 +192,21 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
      - Page components accept a prop called `params`.
   3. Fetch the specific invoice.
   4. Pass the `id` to the Server Action.
+- Further reading: [Security with Server Actions](https://nextjs.org/blog/security-nextjs-server-components-actions)
+
+## Chapter 13 Handling Errors
+
+- `error.tsx`
+  - Use it to catch **unexpected errors** in your route segments, and show a **fallback UI**.
+  - Must be a Client Component.
+  - Accepts two props:
+    1. `error` object - JS native error object.
+    2. `reset` function - To reset the error boundary (try to re-render the route segment).
+- Use `notFound` function and `not-found.tsx` file to handle 404 errors.
+- How `redirect` works is by throwing an error internally. Hence, they should be called outside of try/catch block to work properly.
+- `notFound` will take precedence over `error.tsx`.
+- Further reading:
+  - [Error Handling](https://nextjs.org/docs/app/building-your-application/routing/error-handling)
+  - [error.js (Component) API Reference](https://nextjs.org/docs/app/api-reference/file-conventions/error)
+  - [notFound() API Reference](https://nextjs.org/docs/app/api-reference/functions/not-found)
+  - [not-found.js (Component) API Reference](https://nextjs.org/docs/app/api-reference/file-conventions/not-found)
