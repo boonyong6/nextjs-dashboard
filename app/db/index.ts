@@ -5,7 +5,7 @@ const pool = new Pool();
 
 export function sql<Type extends QueryResultRow>(
   sqlStrings: TemplateStringsArray,
-  ...values: any[]
+  ...values: unknown[]
 ) {
   const sql = _formatSql(sqlStrings, ...values);
   return pool.query<Type>(sql);
@@ -26,13 +26,13 @@ export class ClientWrapper {
     return this._client.end();
   }
 
-  public sql(sqlStrings: TemplateStringsArray, ...values: any[]) {
+  public sql(sqlStrings: TemplateStringsArray, ...values: unknown[]) {
     const sql = _formatSql(sqlStrings, ...values);
     return this._client.query(sql);
   }
 }
 
-function _formatSql(sqlStrings: TemplateStringsArray, ...values: any[]) {
+function _formatSql(sqlStrings: TemplateStringsArray, ...values: unknown[]) {
   let sql = "";
   sqlStrings.forEach((s, i) => {
     let value = "";
