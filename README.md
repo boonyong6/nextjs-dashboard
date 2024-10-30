@@ -210,3 +210,10 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   - [error.js (Component) API Reference](https://nextjs.org/docs/app/api-reference/file-conventions/error)
   - [notFound() API Reference](https://nextjs.org/docs/app/api-reference/functions/not-found)
   - [not-found.js (Component) API Reference](https://nextjs.org/docs/app/api-reference/file-conventions/not-found)
+
+## 14 Improving Accessibility
+
+- Use `eslint-plugin-jsx-a11y` to implement accessibility best practices.
+  - Accessibility features and some common practice.
+- **Server-side form validation** with Server Actions.
+- Show form errors using React's `useActionState` hook.
