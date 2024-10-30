@@ -217,3 +217,18 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
   - Accessibility features and some common practice.
 - **Server-side form validation** with Server Actions.
 - Show form errors using React's `useActionState` hook.
+
+## Adding Authentication
+
+- Using NextAuth.js
+  - Abstracts away the complexity involved in managing sessions, sign-in and sign-out, etc.
+  - Generate a secret key to encrypt cookies to ensure the security of user sessions. E.g. `openssl rand -base64 32`
+  - Configure using a `auth.config.ts` file.
+    - Use `pages` option to specify the route for **custom** sign-in, sign-out, and error pages. (Not required)
+    - `authorized` callback is used by Next.js Middleware. `auth` property contains user's session.
+    - `providers` option is the list of different login options.
+- Use Middleware to redirect users and protect routes.
+- Use `bcrypt` library for password hashing. (Can't use directly in Middleware).
+- `auth.config.ts` - handle general config and basic authorization logic (e.g. is logged in)
+- `auth.js` - handle authentication (login logic), identity providers (Idp) and export sign in, sign out method.
+- Use the exported sign in and sign out methods of `auth.js` in Server Actions.
