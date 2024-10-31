@@ -121,11 +121,16 @@ export async function deleteInvoice(id: string) {
 }
 
 export async function authenticate(
+  redirectTo: string,
   prevState: string | undefined,
   formData: FormData
 ) {
   try {
-    await signIn("credentials", formData);
+    await signIn("credentials", {
+      redirectTo,
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

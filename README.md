@@ -218,7 +218,7 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 - **Server-side form validation** with Server Actions.
 - Show form errors using React's `useActionState` hook.
 
-## Adding Authentication
+## 15 Adding Authentication
 
 - Using NextAuth.js
   - Abstracts away the complexity involved in managing sessions, sign-in and sign-out, etc.
