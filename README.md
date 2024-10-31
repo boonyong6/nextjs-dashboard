@@ -232,3 +232,24 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 - `auth.config.ts` - handle general config and basic authorization logic (e.g. is logged in)
 - `auth.js` - handle authentication (login logic), identity providers (Idp) and export sign in, sign out method.
 - Use the exported sign in and sign out methods of `auth.js` in Server Actions.
+
+## 16 Adding Metadata
+
+- Crucial for SEO.
+- Metadata like **Open Graph** improves the appearance of shared links on social media.
+- Types of metadata:
+  - Title
+  - Description - often displayed in search engine results.
+  - Keyword - helping search engine index the page (comma-separated).
+  - Open Graph
+    ```html
+    <meta property="og:title" content="Title Here" />
+    <meta property="og:description" content="Description Here" />
+    <meta property="og:image" content="image_url_here" />
+    ```
+  - Favicon - Site icon.
+- Has a Metadata API to define your app metadata.
+- Two ways to add:
+  1. Config-based - static `metadata` object or dynamic `generateMetadata()` in `layout.tsx` or `page.tsx`.
+  2. File-based - special files in `app`
+- Use `title.template` field in the `metadata` object (`layout.tsx`) to define a template for your page titles.

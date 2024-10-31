@@ -16,7 +16,7 @@ const iconMap = {
 
 export default async function CardWrapper() {
   await new Promise<void>((resolve) => {
-    setTimeout(resolve, 1000);
+    setTimeout(resolve, 500);
   });
 
   const {
